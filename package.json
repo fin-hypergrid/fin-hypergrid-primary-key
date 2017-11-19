@@ -1,0 +1,19 @@
+{
+  "name": "fin-hypergrid-primary-key",
+  "version": "1.0.0",
+  "description": "Hypergrid plug-in to get/delete/modify a data row based on a unique single- or multi-column ID",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fin-hypergrid/fin-hypergrid-primary-key.git"
+  },
+  "author": "Jonathan Eiten",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fin-hypergrid/fin-hypergrid-primary-key/issues"
+  },
+  "homepage": "https://github.com/fin-hypergrid/fin-hypergrid-primary-key#readme"
+}

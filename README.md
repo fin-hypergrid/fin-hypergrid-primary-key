@@ -6,6 +6,28 @@ These functions are all basically wrappers for the various `findRow` overloads.
 
 ## Installation
 
+**Important:** Your data source must support the [`findRow`](https://github.com/fin-hypergrid/fin-hypergrid-find-row) function.
+
+### Client-side install with `<script>` tag
+
+1. In `<head>...</head>` element, include <u>only one or the other</u> of the following (after including Hypergrid itself):
+```html
+<script src="https://fin-hypergrid.github.io/fin-hypergrid-primary-key/index.js"></script>
+<script src="https://fin-hypergrid.github.io/fin-hypergrid-primary-key/index.min.js"></script>
+```
+2. In a `<script>...</script>` element:
+```javascript
+var grid = new fin.Hypergrid({
+    ...,
+    plugins: [
+        ...,
+        fin.Hypergrid['primary-key']
+    ]
+});
+```
+
+### Browserify or webpack integration with `require()`
+
 ```js
 var grid = new Hypergrid({
     ...,
@@ -16,39 +38,11 @@ var grid = new Hypergrid({
 });
 ```
 
-Note however that your data source must support the [`findRow`](https://github.com/fin-hypergrid/fin-hypergrid-find-row) function.
-
 ## Usage
 
-### Client-side install with `<script>` tag
-
-1. In `<head>...</head>` element, include <u>only one or the other</u> of the following (after including Hypergrid itself):
-```html
-<script src="build/add-ons/row-by-id.js"></script>
-<script src="build/add-ons/row-by-id.min.js"></script>
-```
-2. In a `<script>...</script>` element:
-```javascript
-rowById.mixInTo(MyDataModel.prototype);
-```
-
-### Browserify integration with `require()`
-
-```javascript
-var rowById = require('./add-ons/rowById');
-...
-robById.mixInTo(myGrid.behavior.dataModel);
-```
-
-### Note
-
-The above code access methodologies reference two different files:
-* The built version comes from ./build/add-ons and the API is assigned to `window.fin.Hypergrid.rowById`
-* The repo version comes from ./add-ons and the API is assigned to `module.exports`
-
-## Examples
-
-_Instructions:_ You can try the examples below by going to [row-by-id.html](http://openfin.github.io/fin-hypergrid/row-by-id.html). This page is identical to [example.html](http://openfin.github.io/fin-hypergrid/example.html) _except_ with the addition of the above client-side install and mix-in lines. Then copy & paste each of the following code blocks into Chrome's developer console and hit the return key, observing the changes to the grid as you do so.
+_Instructions:_ Create a simple Hypergrid [example](http://github.com/fin-hypergrid/demo/example.html)
+that installs the plug-in (as above). Then copy & paste each of the following code blocks into Chrome's developer
+console and hit the return key, observing the changes to the grid as you do so.
 
 1. Set up some variables:
 ```javascript
